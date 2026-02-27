@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-layout 미션</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: gray;
+            padding: 15px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        nav {
+            width: 150px;
+            padding: 15px;
+            background: #fbfbfb;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            border: 1px solid #969696;
+
+        }
+
+        nav ul {
+            margin-top: 15px;
+            padding-left: 15px;
+        }
+
+        main {
+            flex: 1;
+            padding: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            border: 1px solid #969696;
+
+        }
+
+        .main-box {
+            margin: 15px;
+            padding: 10px;
+            background: #e5f8ff;
+            border: 2px dashed skyblue;
+        }
+
+        aside {
+            width: 150px;
+            padding: 15px;
+            background: #fbfbfb;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            border: 1px solid #969696;
+        }
+
+        footer {
+            background: gray;
+            padding: 15px;
+            color: #ffffff;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        머리부(Header)
+    </header>
+
+    <div class="container">
+
+        <nav>
+            <p><b>네비게이션(Nav)</b></p>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>메인 콘텐츠(Main)</h2>
+
+            <div class="main-box">
+                양옆은 고정폭, 가운데는 가변폭!
+            </div>
+
+            <p>Hint. 가운데 영역은 flex: 1로 남는 공간을 차지합니다.</p>
+        </main>
+
+        <aside>
+            <p><b>사이드바(Aside)</b></p>
+            <br>
+            <p>공지/광고/프로필 등</p>
+        </aside>
+
+    </div>
+
+    <footer>
+        바닥부(Footer)
+    </footer>
+
+</body>
+
+</html>
