@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        div {
+            border: 1px solid #d6d6d6;
+        }
+
+        .item {
+            background-color: #e4cff8;
+            padding: 15px;
+        }
+
+        .item:nth-child(1) {
+            background-color: #5e5e5e;
+        }
+
+        .item:nth-child(2) {
+            background-color: #eeeeee;
+        }
+
+        .item:nth-child(3) {
+            background-color: #ffffff;
+        }
+
+        .item:nth-child(4) {
+            background-color: #eeeeee;
+        }
+
+        .item:nth-child(5) {
+            background-color: #5e5e5e;
+        }
+
+        #t1 {
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <style>
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            border: 1px dashed #aaa;
+            gap: 5px;
+
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 80px 1fr 80px;
+
+            grid-template-areas:
+                "a a a"
+                "b c d"
+                "b c d"
+                "e e e";
+        }
+    </style>
+
+    <div class="container">
+        <div class="item item1" style="grid-area: a;">
+            <p id="t1">머리부(Header)</p>
+        </div>
+
+        <div class="item item2" style="grid-area: b;">
+            <p><b>네비게이션(Nav)</b>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="item item3" style="grid-area: c;">
+            <h2>메인 콘텐츠(Main)</h2>
+            <div class="main-box">
+                양옆은 고정폭, 가운데는 가변폭!
+            </div>
+        </div>
+
+        <div class="item item4" style="grid-area: d;">
+            <p><b>사이드바(Aside)</b></p>
+            <p>공지/광고/프로필 등</p>
+        </div>
+
+        <div class="item item5" style="grid-area: e;">
+            <p id="t1">바닥부(Footer)</p>
+        </div>
+    </div>
+</body>
+
+</html>
