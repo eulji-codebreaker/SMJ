@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background-color: #ffffff;
+        }
+
+        .box {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 278px;
+            height: 180px;
+            background-color: #CA785C;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .image-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 130px;
+            overflow: hidden;
+        }
+
+        .image-area img {
+            position: absolute;
+            top: -89px;
+            left: -20px;
+            width: 298px;
+            height: 298px;
+        }
+
+        .text-area {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 278px;
+            height: 40px;
+            top: 120px;
+            background-color: #CA785C;
+        }
+
+        .text {
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 100%;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="image-area">
+                <img src="image/10d3b623470d38c14c6543d51273e9fd28a9fd7d.jpg" alt="이미지">
+            </div>
+            <div class="text-area">
+                <div class="text">안녕하세요!</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

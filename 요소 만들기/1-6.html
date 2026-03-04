@@ -19,13 +19,30 @@
             background-color: #ffffff;
         }
 
-        .box {
+        .profile-card {
             position: absolute;
             top: 16px;
             left: 16px;
-            width: 278px;
+            width: 160px;
+            height: 195px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .circle {
+            width: 160px;
             height: 160px;
-            background-color: #FFB9B9;
+            background-color: #CA785C;
+            border-radius: 9999px;
+        }
+
+        .text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
         }
     </style>
 
@@ -33,7 +50,10 @@
 
 <body>
     <div class="container">
-        <div class="box"></div>
+        <div class="profile-card">
+            <div class="circle"></div>
+            <div class="text">프로필</div>
+        </div>
     </div>
 </body>
 
