@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
         body {
             margin: 0;
@@ -19,40 +18,47 @@
             background-color: #ffffff;
         }
 
-        .card {
+        .box {
             position: absolute;
-            width: 160px;
-            height: 195px;
+            width: 297px;
+            height: 35px;
             top: 16px;
             left: 16px;
+            padding: 8px 16px;
             gap: 16px;
+
+            background-color: #ffb9b9;
             display: flex;
-            flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
         }
 
-        .circle {
-            width: 160px;
-            height: 160px;
-            border-radius: 9999px;
-            background-color: #CA785C;
-        }
-
-        .text {
+        .text1, .text2, .text3 {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
             font-size: 16px;
-            text-align: center;
+            line-height: 100%;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .circle1, .circle2 {
+            width: 4px;
+            height: 4px;
+            background-color: #d9d9d9;
+            border-radius: 100%;
         }
     </style>
-
 </head>
 
 <body>
     <div class="container">
-        <div class="card">
-            <div class="circle"></div>
-            <div class="text">프로필</div>
+        <div class="box">
+            <div class="text1">웹툰홈</div>
+            <div class="circle1"></div>
+            <div class="text2">요일별웹툰</div>
+            <div class="circle2"></div>
+            <div class="text3">베스트도전</div>
         </div>
     </div>
 </body>

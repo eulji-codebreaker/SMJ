@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+        }
+
+        .card {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 332px;
+            height: 120px; 
+            background-color: #ffe4e4;
+            border-radius: 8px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .side1 {
+            width: 100px; 
+            background-color: #f2b9b9;
+            flex-shrink: 0; 
+        }
+
+        .side2 {
+            flex: 1;
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .text1 {
+            align-self: flex-start; 
+            padding: 2px 8px;
+            background-color: #ffb9b9;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        .text2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .text3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #8b8b8b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="side1"></div>
+            <div class="side2">
+                <div class="text1">반가워요!</div>
+                <div class="text2">좋은하루보내세요!</div>
+                <div class="text3">날씨가 좋네요!</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
