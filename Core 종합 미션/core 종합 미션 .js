@@ -11,6 +11,10 @@ function checkEvenOdd(num) {
     }
 }
 
+checkEvenOdd(4); 
+checkEvenOdd(5); 
+console.log('-----------------------------------')
+
 // ==========================================================================
 // 2. 아래의 객체를 for in 반복문을 사용하여, 객체의 모든 키와 그에 해당하는 값을 출력하는 코드를 작성하세요.
 
@@ -32,6 +36,8 @@ for (var key in person) {
     console.log(`${key}: ${person[key]}`);
 }
 
+console.log(person);
+console.log('-----------------------------------')
 
 // ==========================================================================
 // 3. 두 개의 숫자를 매개변수로 받아서 그 합을 반환하는 함수를 작성하세요.
@@ -40,6 +46,9 @@ for (var key in person) {
 function add(a, b) {
     return a + b;
 }
+
+console.log(add(10,20));
+console.log('-----------------------------------')
 
 // ==========================================================================
 // 4. 아래의 함수들을 화살표 함수로 변환해보세요.
@@ -55,6 +64,10 @@ function add(a, b) {
 
 const greet = () => "Hello!";
 const getInfo = (name, age) => `name: ${name}, age: ${age}`;
+
+console.log(greet());
+console.log(getInfo("홍길동", 20));
+console.log('-----------------------------------')
 
 // ==========================================================================
 // 5. 아래의 코드를 실행했을 때 출력결과가 나오도록 Person 생성자 함수를 정의하세요.
@@ -75,6 +88,10 @@ function Person(name, age) {
     };
 }
 
+const personN = new Person("홍길동",20)
+personN.sayHello();
+console.log('-----------------------------------')
+
 // ==========================================================================
 // 6. (1) user 객체에 email 프로퍼티를 추가하고 "hong@gmail.com" 값을 넣으세요.
 //    (2) age 값을 21로 수정하세요.
@@ -92,6 +109,9 @@ user.email = "hong@gmail.com";
 user.age = 21;                 
 delete user.name;            
 
+console.log(user);
+console.log('-----------------------------------')
+
 // ==========================================================================
 // 7. car 객체와 fireCar 객체 정의하기
 // -------------------------------------------------------------------------------
@@ -105,6 +125,9 @@ const fireCar = Object.create(car);
 fireCar.color = "red";             
 
 // 위의 예제에서 자기 자신의 프로퍼티와 상속된 프로퍼티를 구분하세요.
+
+console.log(fireCar.brand);
+console.log(fireCar.color);
 
 console.log(fireCar.hasOwnProperty('color'));
 console.log(fireCar.hasOwnProperty('brand'));
