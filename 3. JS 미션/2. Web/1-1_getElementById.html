@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ID 사용</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .box {
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="box1" class="box">첫 번째 박스입니다.</div>
+    <div id="box2" class="box">두 번째 박스입니다.</div>
+
+    <p id="message">여기에 메시지가 표시됩니다.</p>
+
+    <button onclick="changeBox1()">첫 번째 박스 선택</button>
+    <button onclick="changeBox2()">두 번째 박스 선택</button>
+    <button onclick="showMessage()">메시지 선택</button>
+
+    <script>
+
+        function changeBox1() {
+            var box = document.getElementById("box1");
+            box.innerHTML = "첫 번째 박스를 찾았습니다";
+            box.style.backgroundColor = "#ffcccc";
+        }
+
+        function changeBox2() {
+            var box = document.getElementById("box2");
+            box.innerHTML = "두 번째 박스를 찾았습니다";
+            box.style.backgroundColor = "#ccffcc";
+            box.style.color = "#333";
+        }
+
+        function showMessage() {
+            var msg = document.getElementById("message");
+            msg.textContent = "ID로 요소를 성공적으로 찾았습니다";
+            msg.style.color = "#007bff";
+            msg.style.fontSize = "18px";
+            msg.style.fontWeight = "bold";
+        }
+
+    </script>
+
+</body>
+
+</html>

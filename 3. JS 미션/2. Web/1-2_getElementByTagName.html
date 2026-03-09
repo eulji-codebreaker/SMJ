@@ -2,10 +2,17 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>태그명 예제</title>
+    <meta charset="UTF-8">
+    <title>태그명</title>
+
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
         p {
             padding: 10px;
             margin: 5px 0;
@@ -21,7 +28,7 @@
         button {
             padding: 10px 20px;
             margin: 5px;
-            background-color: #0000ff;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 3px;
@@ -29,12 +36,14 @@
         }
 
         button:hover {
-            background-color: #1b1b81;
+            background-color: #0056b3;
         }
     </style>
+
 </head>
 
 <body>
+
     <p>첫 번째 문단입니다.</p>
     <p>두 번째 문단입니다.</p>
     <p>세 번째 문단입니다.</p>
@@ -51,34 +60,37 @@
     <button onclick="changeFirstParagraph()">첫 번째 문단만 선택</button>
 
     <script>
-        function changeParagraphs() {
-            var paragraphs = document.getElementsByTagName("p");
 
-            for (var i = 0; i < paragraphs.length; i++) {
-                paragraphs[i].innerHTML = "선택된 문단 " + (i + 1);
-                paragraphs[i].style.backgroundColor = "#dde090";
+        function changeParagraphs() {
+            var p = document.getElementsByTagName("p");
+
+            for (var i = 0; i < p.length; i++) {
+                p[i].innerHTML = "선택된 문단 " + (i + 1);
+                p[i].style.backgroundColor = "#ffeecc";
             }
         }
 
         function changeListItems() {
-            var listItems = document.getElementsByTagName("li");
+            var li = document.getElementsByTagName("li");
 
-            for (var i = 0; i < listItems.length; i++) {
-                listItems[i].innerHTML = "새로운 목록 항목 " + (i + 1);
-                listItems[i].style.color = "#1b1b81";
-                listItems[i].style.fontWeight = "bold";
+            for (var i = 0; i < li.length; i++) {
+                li[i].innerHTML = "새로운 목록 항목 " + (i + 1);
+                li[i].style.color = "#007bff";
+                li[i].style.fontWeight = "bold";
             }
         }
 
         function changeFirstParagraph() {
-            var paragraphs = document.getElementsByTagName("p");
+            var p = document.getElementsByTagName("p");
 
-            if (paragraphs.length > 0) {
-                paragraphs[0].innerHTML = "첫 번째 문단만 선택되었습니다!";
-                paragraphs[0].style.backgroundColor = "#ccffcc";
+            if (p.length > 0) {
+                p[0].innerHTML = "첫 번째 문단만 선택되었습니다!";
+                p[0].style.backgroundColor = "#ccffcc";
             }
         }
+
     </script>
+
 </body>
 
 </html>
