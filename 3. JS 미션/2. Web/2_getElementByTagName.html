@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>태그명 예제</title>
+    <style>
+        p {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        li {
+            padding: 5px;
+            margin: 3px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #0000ff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1b1b81;
+        }
+    </style>
+</head>
+
+<body>
+    <p>첫 번째 문단입니다.</p>
+    <p>두 번째 문단입니다.</p>
+    <p>세 번째 문단입니다.</p>
+
+    <ul>
+        <li>첫 번째 목록</li>
+        <li>두 번째 목록</li>
+        <li>세 번째 목록</li>
+        <li>네 번째 목록</li>
+    </ul>
+
+    <button onclick="changeParagraphs()">모든 문단 선택</button>
+    <button onclick="changeListItems()">모든 목록 선택</button>
+    <button onclick="changeFirstParagraph()">첫 번째 문단만 선택</button>
+
+    <script>
+        function changeParagraphs() {
+            var paragraphs = document.getElementsByTagName("p");
+
+            for (var i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].innerHTML = "선택된 문단 " + (i + 1);
+                paragraphs[i].style.backgroundColor = "#dde090";
+            }
+        }
+
+        function changeListItems() {
+            var listItems = document.getElementsByTagName("li");
+
+            for (var i = 0; i < listItems.length; i++) {
+                listItems[i].innerHTML = "새로운 목록 항목 " + (i + 1);
+                listItems[i].style.color = "#1b1b81";
+                listItems[i].style.fontWeight = "bold";
+            }
+        }
+
+        function changeFirstParagraph() {
+            var paragraphs = document.getElementsByTagName("p");
+
+            if (paragraphs.length > 0) {
+                paragraphs[0].innerHTML = "첫 번째 문단만 선택되었습니다!";
+                paragraphs[0].style.backgroundColor = "#ccffcc";
+            }
+        }
+    </script>
+</body>
+
+</html>
