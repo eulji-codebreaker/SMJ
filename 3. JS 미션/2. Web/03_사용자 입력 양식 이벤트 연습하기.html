@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>사용자 입력 양식 이벤트 연습</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 500px;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .submit-btn {
+            background: skyblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .highlight {
+            background: #dff4ff;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+
+        .counter {
+            color: gray;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>사용자 입력 양식 이벤트 연습하기</h1>
+
+    <form id="userForm">
+
+        <div class="form-group">
+            <label for="username"><b>이름</b></label><br>
+            <input type="text" id="username" placeholder="이름을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label for="useremail"><b>이메일</b></label><br>
+            <input type="text" id="useremail" placeholder="example@domain.com">
+        </div>
+
+        <div class="form-group">
+            <label><b>성별</b></label><br>
+            <input type="radio" name="gender" id="male">
+            <label for="male">남자</label>
+
+            <input type="radio" name="gender" id="female">
+            <label for="female">여자</label>
+        </div>
+
+        <div class="form-group">
+            <label><b>참여 일자 선택</b></label><br>
+
+            <select id="date">
+                <option value="" selected disabled>-- 날짜 선택 --</option>
+                <option value="2026.03.11">2026년 3월 11일</option>
+                <option value="2026.03.12">2026년 3월 12일</option>
+                <option value="2026.03.13">2026년 3월 13일</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label><b>요청사항</b></label><br>
+
+            <textarea id="request" placeholder="요청 사항을 입력하세요"></textarea><br>
+
+            <span id="count" class="counter">0</span>/5000자
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" id="agree">
+            <label for="agree">개인정보 수집에 동의합니다</label>
+        </div>
+
+        <input type="submit" value="신청하기" class="submit-btn">
+
+    </form>
+
+    <script>
+
+        const nameInput = document.getElementById("username");
+        const emailInput = document.getElementById("useremail");
+        const dateSelect = document.getElementById("date");
+        const agreeCheck = document.getElementById("agree");
+        const textarea = document.getElementById("request");
+        const counter = document.getElementById("count");
+        const form = document.getElementById("userForm");
+
+
+        function focusIn() {
+            this.style.background = "#ffffe0";
+        }
+
+        function focusOut() {
+            this.style.background = "white";
+        }
+
+        nameInput.addEventListener("focusin", focusIn);
+        nameInput.addEventListener("focusout", focusOut);
+
+        emailInput.addEventListener("focusin", focusIn);
+        emailInput.addEventListener("focusout", focusOut);
+
+
+        dateSelect.addEventListener("change", function () {
+            this.classList.add("highlight");
+        });
+
+
+        agreeCheck.addEventListener("change", function () {
+
+            if (this.checked) {
+                document.body.style.background = "#f5faff";
+            } else {
+                document.body.style.background = "white";
+            }
+
+        });
+
+        textarea.addEventListener("input", function () {
+
+            let length = this.value.length;
+
+            counter.textContent = length;
+
+            if (length > 5000) {
+                alert("5000자까지 입력 가능합니다");
+                this.value = this.value.substring(0, 5000);
+            }
+
+        });
+
+        form.addEventListener("submit", function (e) {
+
+            if (nameInput.value.trim() === "") {
+                alert("이 입력란을 작성하세요.");
+                nameInput.focus();
+                e.preventDefault();
+                return;
+            }
+
+            if (!emailInput.value.includes("@")) {
+                alert("이메일 주소에 '@'를 포함해 주세요.주소에 '@'가 없습니다.");
+                emailInput.focus();
+                e.preventDefault();
+                return;
+            }
+
+            if (dateSelect.value === "") {
+                alert("날짜를 선택해주세요");
+                e.preventDefault();
+                return;
+            }
+
+            if (!agreeCheck.checked) {
+
+                alert("계속하려면 이 확인란을 선택하세요.");
+
+                agreeCheck.classList.add("error");
+
+                e.preventDefault();
+                return;
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
